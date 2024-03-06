@@ -1,0 +1,26 @@
+﻿@page "/"
+
+@inject AppState _appState
+
+@{
+    _appState.SetMetaTags(new MetaTags
+            {
+                Title = "Beranda",
+                Type = "website",
+                Url = "https://dev.bprmarkoni.com",
+                Description = "Halaman beranda untuk mencoba social sharing link preview.",
+                Image = "https://bprmarkoni.com/wp-content/uploads/2023/04/damara-1024x394.jpg",
+                Imagesecureurl = "https://bprmarkoni.com/wp-content/uploads/2023/04/damara-1024x394.jpg",
+                Imagewidth = "1024",
+                Imageheight = "394",
+                Imagetype = "image/jpg",
+                Imagealt = "Gambar produk deposito"
+            });
+}
+
+<PageTitle>@_appState.MetaTags.Title</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new Fluent Blazor app.
+

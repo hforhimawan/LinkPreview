@@ -1,0 +1,45 @@
+﻿@inject AppState _appState
+
+<!DOCTYPE html>
+
+<html lang="en" prefix="og: https://ogp.me/ns#">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@_appState.MetaTags.Title</title>
+    <meta name="og:title" content="@_appState.MetaTags.Title">
+    <meta name="og:type" content="@_appState.MetaTags.Type">
+    <meta name="og:url" content="@_appState.MetaTags.Url">
+    <meta name="og:description" content="@_appState.MetaTags.Description">
+    <meta name="og:image" content="@_appState.MetaTags.Image">
+    <meta name="og:image:secure_url" content="@_appState.MetaTags.Imagesecureurl">
+    <meta name="og:image:width" content="@_appState.MetaTags.Imagewidth">
+    <meta name="og:image:height" content="@_appState.MetaTags.Imageheight">
+    <meta name="og:image:type" content="@_appState.MetaTags.Imagetype">
+    <meta name="og:image:alt" content="@_appState.MetaTags.Imagealt">
+    <base href="/" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="LinkPreview.styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <HeadOutlet />
+</head>
+
+<body>
+    <Routes />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(0);
+    
+        _appState.OnChange += StateHasChanged;
+    
+    }
+}

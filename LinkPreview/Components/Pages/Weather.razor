@@ -1,0 +1,77 @@
+﻿@page "/weather"
+
+@inject AppState _appState
+
+@{
+    _appState.SetMetaTags(new MetaTags
+            {
+                Title = "Cuaca",
+                Type = "website",
+                Url = "https://dev.bprmarkoni.com/weather",
+                Description = "Prakiraan cuaca ini hanya ilustrasi untuk menampilkan bagaimana Blazor bekerja. Untuk mendapatkan prakiraan cuaca yang akurat sebaiknya periksalah informasi dari otoritas setempat.",
+                Image = "https://bprmarkoni.com/wp-content/uploads/2023/03/1_tab-5-1024x429.jpg",
+                Imagesecureurl = "https://bprmarkoni.com/wp-content/uploads/2023/03/1_tab-5-1024x429.jpg",
+                Imagewidth = "1024",
+                Imageheight = "429",
+                Imagetype = "image/jpg",
+                Imagealt = "Gambar produk tabungan"
+            });
+}
+
+@attribute [StreamRendering]
+
+<PageTitle>@_appState.MetaTags.Title</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <FluentDataGrid Id="weathergrid" Items=@forecasts GridTemplateColumns="1fr 1fr 1fr 2fr" TGridItem=WeatherForecast>
+        <PropertyColumn Title="Date" Property="@(c => c!.Date)" Sortable="true" Align=Align.Start/>
+        <PropertyColumn Title="Temp. (C)" Property="@(c => c!.TemperatureC)" Sortable="true" Align=Align.Center/>
+        <PropertyColumn Title="Temp. (F)" Property="@(c => c!.TemperatureF)" Sortable="true" Align=Align.Center/>
+        <PropertyColumn Title="Summary" Property="@(c => c!.Summary)" Sortable="true" Align=Align.End/>
+    </FluentDataGrid>
+}
+
+@code {
+
+
+    
+    private IQueryable<WeatherForecast>? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        // Simulate asynchronous loading to demonstrate streaming rendering
+        await Task.Delay(500);
+
+        var startDate = DateOnly.FromDateTime(DateTime.Now);
+        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        {
+            Date = startDate.AddDays(index),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = summaries[Random.Shared.Next(summaries.Length)]
+        }).AsQueryable();
+
+    }
+
+    private class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+
+
+
+}

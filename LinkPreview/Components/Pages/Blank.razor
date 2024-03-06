@@ -1,0 +1,25 @@
+﻿@page "/blank"
+
+@inject AppState _appState
+
+@{
+    _appState.SetMetaTags(new MetaTags
+            {
+                Title = "Blank",
+                Type = "website",
+                Url = "https://dev.bprmarkoni.com/blank",
+                Description = "Ini halaman kosong. Hanya ada judul.",
+                Image = "https://bprmarkoni.com/wp-content/uploads/2023/08/santunan-anak-yatim-bpr-markoni-hut-RI-78-300x138.jpeg",
+                Imagesecureurl = "https://bprmarkoni.com/wp-content/uploads/2023/08/santunan-anak-yatim-bpr-markoni-hut-RI-78-300x138.jpeg",
+                Imagewidth = "300",
+                Imageheight = "138",
+                Imagetype = "image/jpeg",
+                Imagealt = "Gambar santunan anak yatim"
+            });
+}
+
+<PageTitle>@_appState.MetaTags.Title</PageTitle>
+
+<h1>Blank</h1>
+
+

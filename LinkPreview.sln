@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkPreview", "LinkPreview\LinkPreview.csproj", "{544A449A-0194-497F-95E1-D1667F3FB919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenGraph", "OpenGraph\OpenGraph.csproj", "{54D50434-7F3B-49B8-BE47-FD561BFCF396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{544A449A-0194-497F-95E1-D1667F3FB919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544A449A-0194-497F-95E1-D1667F3FB919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544A449A-0194-497F-95E1-D1667F3FB919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544A449A-0194-497F-95E1-D1667F3FB919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D50434-7F3B-49B8-BE47-FD561BFCF396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D50434-7F3B-49B8-BE47-FD561BFCF396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D50434-7F3B-49B8-BE47-FD561BFCF396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D50434-7F3B-49B8-BE47-FD561BFCF396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2813D16F-7733-40B0-B259-0A7154BC55EE}
+	EndGlobalSection
+EndGlobal
